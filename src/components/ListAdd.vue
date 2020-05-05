@@ -7,7 +7,11 @@
       @focusin="startEditing"
       @focusout="finishEditing"
       >
-    <button type="submit" class="add-button">
+      
+    <!-- フォームがアクティブの場合にボタンが出現 -->
+    <button type="submit"
+            class="add-button"
+            v-if="isEditing || titleExists">
       Add
     </button>
   </form>
