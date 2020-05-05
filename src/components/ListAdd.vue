@@ -7,7 +7,7 @@
       @focusin="startEditing"
       @focusout="finishEditing"
       >
-      
+
     <!-- フォームがアクティブの場合にボタンが出現 -->
     <button type="submit"
             class="add-button"
@@ -30,10 +30,19 @@ export default {
   computed: {
     classList() {
       const classList = ['addlist']
+
       if (this.isEditing) {
         classList.push('active')
       }
+      // フォームに文字が入力されたときにボタンが緑になる
+      if (this.titleExists) {
+        classList.push('addable')
+      }
       return classList
+    },
+    // フォームに文字が入力されたとき
+    titleExists() {
+      return this.title.length > 0
     },
   },
 
