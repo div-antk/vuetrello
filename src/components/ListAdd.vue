@@ -38,7 +38,7 @@ export default {
       if (this.titleExists) {
         classList.push('addable')
       }
-      return classList
+      return classList;
     },
     // フォームに文字が入力されたとき
     titleExists() {
