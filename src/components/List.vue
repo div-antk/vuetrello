@@ -8,7 +8,7 @@
           :body="item.body"
           :key="item.id"
           :cardIndex="index"
-          :listIndex="listindex"
+          :listIndex="listIndex"
     />
     <card-add :listIndex="listIndex" />
   </div>
