@@ -31,11 +31,16 @@ export default {
   // stateで定義されたデータの名前と同じ名前の文字列でstateを呼び出すことができる
   computed: {
     ...mapState([
-      'lists'
+      'lists',
     ]),
     totalCardCount() {
       return this.$store.getters.totalCardCount
     }
   },
+  // methods: {
+  //   movingCard: function() {
+  //     this.$store.dispatch('updateList', { lists: this.lists })
+  //   },
+  // }
 }
 </script>
