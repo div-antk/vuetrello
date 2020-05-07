@@ -44,6 +44,9 @@ const store = new Vuex.Store({
     removeCardFromList(state, payload) {
       state.lists[payload.listIndex].cards.splice(payload.cardIndex, 1)
     },
+    // updateList(state, payload) {
+    //   state.lists = payload.lists
+    // }
   },
   actions: {
     addlist(context, payload) {
@@ -58,6 +61,9 @@ const store = new Vuex.Store({
     removeCardFromList(context, payload) {
       context.commit('removeCardFromList', payload)
     },
+    // updateList(context, payload) {
+    //   context.commit('updateList', payload)
+    // }
   },
   getters: {
     totalCardCount(state) {
@@ -69,7 +75,7 @@ const store = new Vuex.Store({
 })
 
 // ストアインスタンスを取得
-store.subscribe((mutations, state) => {
+store.subscribe((mutation, state) => {
   localStorage.setItem('trello-lists', JSON.stringify(state.lists))
 })
 
