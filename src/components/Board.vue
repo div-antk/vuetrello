@@ -4,7 +4,7 @@
       vuetrello
     </header>
     <main>
-      <p class="info-line">All: 0 tasks</p>
+      <p class="info-line">All: {{ totalCardCount }} tasks</p>
       <div class="list-index">
           <!-- v-bindは:と省略して記述できる。 -->
           <list v-for="(item, index) in lists"
@@ -33,6 +33,9 @@ export default {
     ...mapState([
       'lists'
     ]),
-  }
+    totalCardCount() {
+      return this.$store.getters.totalCardCount
+    }
+  },
 }
 </script>
